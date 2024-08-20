@@ -1,0 +1,65 @@
+<div
+  class="container"
+  [ngStyle]="
+    isAuthenticated
+      ? { 'justify-content': 'center' }
+      : { 'justify-content': 'flex-start' }
+  "
+>
+  <form (ngSubmit)="checkPassword()">
+    <h1 *ngIf="!isAuthenticated">Memory Book</h1>
+    <div class="password_container" *ngIf="!isAuthenticated">
+      <div class="password_input">
+        <label for="password">Podaj hasło:</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          class="form-control"
+          name="password"
+        />
+      </div>
+
+      <button (click)="checkPassword()" type="submit" class="btn btn-primary">
+        Zaloguj się
+      </button>
+
+      <p *ngIf="showError" class="text-danger">
+        Nieprawidłowe hasło, spróbuj ponownie.
+      </p>
+    </div>
+  </form>
+  <!-- Zawartość strony, widoczna tylko po prawidłowym wpisaniu hasła -->
+  <div
+    *ngIf="isAuthenticated"
+    class="content_container fade-in"
+    [ngClass]="{ visible: isContentVisible }"
+  >
+    <h1>Memory Book</h1>
+    <img
+      src="https://memorybook.blob.core.windows.net/9e542c15-a84b-4b4f-ddf9-08dcc04b820b/9e542c15-a84b-4b4f-ddf9-08dcc04b820b/Tomek/8/20/2024 12%3A46%3A28 PM"
+      style="max-width: 90%; height: auto"
+    />
+    <div class="buttons_container">
+      <button (click)="onUpload()" class="btn btn-primary">
+        Dodaj zdjęcie/film
+      </button>
+
+      <button mat-button (click)="openHarmonogramy()" class="btn btn-success">
+        Wyświetl harmonogram
+      </button>
+
+      <button (click)="navigateToPage()" class="btn btn-secondary">
+        Wyświetl multimedia
+      </button>
+
+      <input
+        type="file"
+        #fileInput
+        style="display: none"
+        (change)="onFileSelected($event)"
+        accept="image/*,video/*"
+      />
+    </div>
+  </div>
+</div>

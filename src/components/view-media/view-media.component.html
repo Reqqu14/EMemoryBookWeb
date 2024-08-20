@@ -1,0 +1,36 @@
+<div class="photo-viewer" @fadeIn>
+  <h2>Memory Book</h2>
+  <div class="photo-container" [ngClass]="{ 'fade-out': isAnimating }">
+    <img
+      [src]="currentPhoto"
+      alt="Photo"
+      class="photo"
+      (load)="onImageLoad()"
+    />
+    <p>{{ photoText }}</p>
+  </div>
+  <div class="controls">
+    <button
+      (click)="previousPhoto()"
+      [disabled]="currentIndex === 0"
+      [ngClass]="{
+        'btn-secondary': currentIndex === 0,
+        'btn-primary': currentIndex !== 0
+      }"
+      class="btn"
+    >
+      Poprzednie
+    </button>
+    <button
+      (click)="nextPhoto()"
+      [disabled]="currentIndex === messages.length - 1"
+      [ngClass]="{
+        'btn-primary': currentIndex !== messages.length - 1,
+        'btn-secondary': currentIndex === messages.length - 1
+      }"
+      class="btn"
+    >
+      Następne
+    </button>
+  </div>
+</div>

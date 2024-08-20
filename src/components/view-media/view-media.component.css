@@ -1,0 +1,62 @@
+.photo-viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  width: 100%;
+}
+
+.photo-container {
+  width: 90%; /* Możesz dostosować rozmiar zdjęcia */
+  height: 65vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background-color: white;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 1);
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: "Aphrodite Slim Pro", sans-serif;
+  margin-bottom: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: "Italianno", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.photo {
+  width: 95%;
+  min-height: 50vh;
+  margin-top: 25px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}

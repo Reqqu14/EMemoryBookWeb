@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+}
+
+.password_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 50vh;
+  justify-content: center;
+}
+
+.password_input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.password_input label {
+  font-size: 24px;
+}
+
+.content_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-height: 600px;
+}
+
+h1 {
+  font-size: 52px;
+  font-family: "Aphrodite Slim Pro", sans-serif;
+  margin-bottom: 0px;
+}
+
+.buttons_container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.form-control {
+  padding: 6px;
+  font-size: 16px;
+  width: 200px;
+}
+
+.text-danger {
+  color: red;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
